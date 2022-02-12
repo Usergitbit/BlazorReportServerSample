@@ -1,0 +1,168 @@
+@import url('open-iconic/font/css/open-iconic-bootstrap.min.css');
+
+
+.a4page {
+    margin-left: -70px; /*  WTF CHROME BUG*/
+    height: 297mm;
+    width: 210mm;
+    padding: 2.5cm;
+    display: grid;
+    box-sizing: content-box;
+    grid-template-rows: auto 1fr auto; /* NEW */
+    grid-template-areas:
+        'header'
+        'content'
+        'footer';
+    padding-top: 0; /* USE PRINTING MARGIN SO IT APPLIES TO ALL PAGES*/
+}
+
+.a4header {
+    grid-area: header;
+}
+
+.a4content {
+    grid-area: content;
+}
+
+.a4footer {
+    grid-area: footer;
+    margin-top: auto;
+}
+
+.image-logo {
+    height: 61px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.rounded-box {
+    border: 2px solid black;
+    border-radius: 12px;
+    background-color: rgb(245,245,245);
+    width: 150px;
+    height: 40px;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rounded-box-company {
+    border: 2px solid black;
+    border-radius: 12px;
+    background-color: rgb(245,245,245);
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rounded-box-company-contents {
+    border: 2px solid #00000017;
+    margin-top: -10px;
+    padding-top: 10px;
+    border-top-color: transparent;
+    padding-left: 5px;
+    border-radius: 12px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+}
+
+.outvoice-logo-container {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.outvoice-container {
+    display: flex;
+    align-self: center;
+    margin-left: auto;
+}
+
+.logo-container {
+    display: flex;
+    align-self: center;
+}
+
+.legal-text {
+    font-family: Arial-Narrow;
+    font-size: small;
+}
+
+.footer-emtpy-placeholder {
+    min-height: 100px;
+}
+/*.a4header {
+    grid-area: header;
+}
+.a4content {
+    grid-area: content;
+}
+.a4footer {
+    grid-area: footer;
+}*/
+/*
+.a4page {
+    height: 29.7cm;
+    width: 21cm;
+    padding: 2.5cm;
+    display: grid;
+    grid-template-rows: 20% 60% 20%
+}
+*/
+
+
+
+
+
+
+
+html, body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+a, .btn-link {
+    color: #0366d6;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+.content {
+    padding-top: 1.1rem;
+}
+
+.valid.modified:not([type=checkbox]) {
+    outline: 1px solid #26b050;
+}
+
+.invalid {
+    outline: 1px solid red;
+}
+
+.validation-message {
+    color: red;
+}
+
+#blazor-error-ui {
+    background: lightyellow;
+    bottom: 0;
+    box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.2);
+    display: none;
+    left: 0;
+    padding: 0.6rem 1.25rem 0.7rem 1.25rem;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+    #blazor-error-ui .dismiss {
+        cursor: pointer;
+        position: absolute;
+        right: 0.75rem;
+        top: 0.5rem;
+    }

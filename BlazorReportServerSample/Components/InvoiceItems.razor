@@ -1,0 +1,27 @@
+﻿<Table class="mt-2" Narrow="true" FullWidth="true">
+	<TableHeader>
+		<TableRow>
+			<TableHeaderCell>#</TableHeaderCell>
+			<TableHeaderCell>Produs</TableHeaderCell>
+			<TableHeaderCell>Cantitate</TableHeaderCell>
+			<TableHeaderCell>Taxa verde</TableHeaderCell>
+			<TableHeaderCell>Pret unitar</TableHeaderCell>
+			<TableHeaderCell>Valoare</TableHeaderCell>
+			<TableHeaderCell>Valoare TVA</TableHeaderCell>
+		</TableRow>
+	</TableHeader>
+	<TableBody>
+		@foreach (var item in Invoice.Items)
+		{
+			<TableRow>
+				<TableRowHeader>@item.RowNumber</TableRowHeader>
+				<TableRowCell>@item.Name</TableRowCell>
+				<TableRowCell>@item.Quantity</TableRowCell>
+				<TableRowCell>@item.GreenTax RON</TableRowCell>
+				<TableRowCell>@item.UnitPrice RON</TableRowCell>
+				<TableRowCell>@item.Value RON</TableRowCell>
+				<TableRowCell>@item.VatValue RON</TableRowCell>
+			</TableRow>
+		}
+	</TableBody>
+</Table>

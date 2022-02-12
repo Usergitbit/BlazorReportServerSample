@@ -1,0 +1,66 @@
+﻿@page "/"
+@using BlazorReportServerSample.Components
+
+<A4Page>
+	<HeaderContent>
+		<div class="outvoice-logo-container">
+			<div class="logo-container">
+				<img class="image-logo" src="@DataService.GetImage()" />
+			</div>
+			<div class="outvoice-container">
+				<div class="rounded-box-company">
+					<div class="d-flex flex-column">
+						<div>
+							FACTURA
+						</div>
+						<div>
+							Seria @Invoice.Series Nr. @Invoice.Number
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<div class="container p-0">
+			<div class="row justify-content-between">
+				<div class="col-6 col-mr-2">
+					<SellerBox Invoice=@Invoice />
+				</div>
+				<div class="col-6 col-ml-2">
+					<BuyerBox Invoice=@Invoice />
+				</div>
+			</div>
+		</div>
+	</HeaderContent>
+	<ChildContent>
+		<div class="p-15">
+			<InvoiceItems Invoice=@Invoice />
+		</div>
+		<div class="legal-text">
+			Conf. Legii nr. 190/2018 privind măsuri de punere în aplicare a Regulamentului (UE)  2016/679 al Parlamentului European și al Consiliului din 27 aprilie 2016 privind protecția persoanelor fizice în ceea ce privește prelucrarea datelor cu caracter personal și privind libera circulație a acestor date și de abrogare a Directivei 95/46/CE (Regulamentul general privind protecția datelor), va informam ca datele Dvs. personale constand in nume, prenume, serie si nr CI/BI, adresa, colectate pt. emiterea prezentei faccturi/avize/proforme/deviz/ nu se va prelucra cu alte scopuri si se va pastra (stoca) cf. Legii.
+			(Timbru Verde) Reprezinta valoarea in RON fara TVA inclusa in pretul unitar al produselor din categoria de EEE prevazute in OGU. nr.5/16.04.2015.
+			In cazul depasirii termenelor de plata convenite, penalizarile sunt de 0.2 % pentru fiecare zi de intarziere aplicate la valoarea echipamentelor preluate si neachitate. Penalitatile pot depasi debitul. Factura si conditiile de plata au fost acceptate de beneficiar.
+			Factura fiscala poate circula fara stampila si semnatura conform legii nr. 227/2015 privind Codul Fiscal, art. 319, aliniatul 29.
+		</div>
+	</ChildContent>
+	<FooterContent>
+		<div>
+			<div class="container p-0 mt-5">
+				<div class="row justify-content-between">
+					<div class="col-6 col-mr-2">
+						<AdditionalInfoBox Invoice=@Invoice />
+					</div>
+					<div class="col-6 col-ml-2">
+						<TotalsBox Invoice=@Invoice />
+					</div>
+					<div class="col-6 col-mr-2 mt-2">
+						<EmptyBox Title="Semnatura si stampila" />
+					</div>
+					<div class="col-6 col-mr-2 mt-2">
+						<EmptyBox Title="Semnatura si stampila" />
+					</div>
+				</div>
+			</div>
+		</div>
+	</FooterContent>
+</A4Page>
