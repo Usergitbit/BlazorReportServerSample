@@ -15,6 +15,7 @@ namespace BlazorReportServerSample.Services
             .RuleFor(i => i.Items, f => orderItemFaker.GenerateBetween(10, 50))
             .RuleFor(i => i.BuyerData, f => buyerDataFaker.Generate())
             .RuleFor(i => i.SellerData, f => sellerDataFaker.Generate())
+            .RuleFor(i => i.TransportType, f => $"{f.Vehicle.Type()} {f.Vehicle.Model()}")
             .RuleFor(i => i.Date, f => f.Date.Future())
             .RuleFor(i => i.DelegateCi, f => f.Random.AlphaNumeric(14))
             .RuleFor(i => i.PayType, f => f.Finance.TransactionType())
